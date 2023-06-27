@@ -43,13 +43,13 @@ int print_string(char *s)
 
 void print_digit(int num)
 {
-        int n;
+	int n;
 
-        if(num == 0)
-                return;
-        n = num / 10;
-        print_digit(n);
-        print(num % 10 + '0');
+	if (num == 0)
+	return;
+	n = num / 10;
+	print_digit(n);
+	print(num % 10 + '0');
 }
 
 
@@ -61,19 +61,19 @@ void print_digit(int num)
 
 int print_num(int num)
 {
-        /*counts number of digitsin num*/
-        int rv = 0, m = num;
+	/*counts number of digitsin num*/
+	int rv = 0, m = num;
 
-        while (m != 0)
-        {
-                m = m / 10;
-                rv += 1;;
-        }
+	while (m != 0)
+	{
+	m = m / 10;
+	rv += 1;
+	}
 
 
-        /*prints the digits*/
-        print_digit(num);
+	/*prints the digits*/
+	print_digit(num);
 
-        return(rv);
+	return (rv);
 
 }
