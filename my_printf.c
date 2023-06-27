@@ -1,10 +1,17 @@
 #include "main.h"
 
+/**
+ * _printf - stardard printf replica
+ * @format: strings passed to the function
+ * Return: number of characters printed
+ */
 
-int _printf(const char *format,...)
+
+int _printf(const char *format, ...)
 {
 	int i = 0, rv = 0;
 	va_list args;
+
 	va_start(args, format);
 
 	while (format[i])
@@ -18,8 +25,7 @@ int _printf(const char *format,...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				print(va_arg(args, int));
-				rv += 1;
+				rv += print(va_arg(args, int));
 				i++;
 			}
 			else if (format[i + 1] == 's')
@@ -36,26 +42,10 @@ int _printf(const char *format,...)
 			{
 				rv += print('%');
 				i++;
-			}	
-
-/*		call func();*/
+			}
 		}
 		i++;
 	}
-	
 	return (rv);
 }
 
-
-/*
-int main()
-{
-	int rv;
-
-	rv = _printf("Hello %c %scworld", 'q', NULL);
-	
-	printf("Hello %d\n" ,rv);
-
-	return (0);
-}
-*/
