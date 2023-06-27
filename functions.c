@@ -47,6 +47,7 @@ void print_digit(int num)
 
 	if (num == 0)
 		return;
+
 	n = num / 10;
 	print_digit(n);
 	print(num % 10 + '0');
@@ -62,6 +63,7 @@ void print_digit(int num)
 int print_num(int num)
 {
 	/*counts number of digits in num*/
+
 	int rv = 0, m = num;
 
 	while (m != 0)
@@ -69,8 +71,7 @@ int print_num(int num)
 		m = m / 10;
 		rv += 1;
 	}
-
-/*prints the digits*/
+	/*prints the digits*/
 	print_digit(num);
 
 	return (rv);
