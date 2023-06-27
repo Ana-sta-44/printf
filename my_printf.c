@@ -1,10 +1,16 @@
 #include "main.h"
 
-
-int _printf(const char *format,...)
+/**
+ * _printf - The printf function
+ * @format: The format
+ * by harrybuild and chisom chisom
+ * Return: The printed characters.
+ */
+int _printf(const char *format, ...)
 {
 	int i = 0, rv = 0;
 	va_list args;
+
 	va_start(args, format);
 
 	while (format[i])
@@ -36,26 +42,10 @@ int _printf(const char *format,...)
 			{
 				rv += print('%');
 				i++;
-			}	
+			}
 
-/*		call func();*/
 		}
 		i++;
 	}
-	
 	return (rv);
 }
-
-
-/*
-int main()
-{
-	int rv;
-
-	rv = _printf("Hello %c %scworld", 'q', NULL);
-	
-	printf("Hello %d\n" ,rv);
-
-	return (0);
-}
-*/
